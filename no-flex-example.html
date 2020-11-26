@@ -1,65 +1,41 @@
 <head>
   <style>
-    html {
-      font-family: sans-serif;
-    }
-
-    body {
-      margin: 0;
+    .flex-container {
       background-color: #e4e8ec;
+      box-sizing: border-box;
+      padding: 10px;
+      /* Utilize o espaço abaixo para transformar a div em um flex-container */
+      display: flex;
     }
 
-    header {
-      background: #0fa36b;
-      height: 100px;
-    }
-
-    h1 {
-      text-align: center;
-      color: white;
-      line-height: 100px;
-      margin: 0;
-    }
-
-    h2 {
-      color: #0fa36b;
-    }
-
-    article {
+    .flex-item {
       padding: 10px;
       margin: 10px;
       background: white;
       border: 1px solid rgba(0,0,0,.125);
       border-radius: .25rem;
+      /* Experimente mudar a propriedade width para ver o que acontece com os itens! */
+      width: 10%;
+      text-align: center;
     }
 
-    /* section {
-      display: flex;
-    } */
+    .f1 {
+      font-size: 60px;
+    }
+
+    .f2 {
+      font-size: 45px;
+    }
+
+    .f3 {
+      font-size: 30px;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Título da página</h1>
-  </header>
-  <section>
-    <article>
-      <h2>Primeiro artigo</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Morbi nunc leo, feugiat quis velit ut, porta
-      pharetra arcu.</p>
-    </article>
-    <article>
-      <h2>Segundo Artigo</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Cras vulputate urna in massa tincidunt, sed
-      efficitur magna faucibus.</p>
-    </article>
-    <article>
-      <h2>Terceiro Artigo</h2>
-      <p>Proin at sodales ante. Suspendisse venenatis massa id
-      justo placerat vestibulum. Maecenas tincidunt orci id mi
-      rhoncus, eu mattis ligula viverra.</p>
-    </article>
-  </section>
+  <div class="flex-container">
+    <div class="flex-item f1">1</div>
+    <div class="flex-item f2">2</div>
+    <div class="flex-item f3">3</div>
+  </div>
 </body>
