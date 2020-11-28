@@ -4,8 +4,9 @@
       background-color: #e4e8ec;
       box-sizing: border-box;
       padding: 10px;
-      /* Utilize o espaço abaixo para transformar a div em um flex-container */
       display: flex;
+      /* Utilize o espaço abaixo para modificar a flex-direction */
+       flex-direction: row;
     }
 
     .flex-item {
@@ -14,28 +15,16 @@
       background: white;
       border: 1px solid rgba(0,0,0,.125);
       border-radius: .25rem;
-      /* Experimente mudar a propriedade width para ver o que acontece com os itens! */
-      width: 10%;
+      min-width: 10%;
       text-align: center;
-    }
-
-    .f1 {
       font-size: 60px;
-    }
-
-    .f2 {
-      font-size: 45px;
-    }
-
-    .f3 {
-      font-size: 30px;
     }
   </style>
 </head>
 <body>
   <div class="flex-container">
-    <div class="flex-item f1">1</div>
-    <div class="flex-item f2">2</div>
-    <div class="flex-item f3">3</div>
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
   </div>
 </body>
