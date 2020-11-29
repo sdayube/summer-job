@@ -1,0 +1,91 @@
+<head>
+  <style>
+    .flex-container {
+      background-color: #e4e8ec;
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      margin: 0 0 20px;
+    }
+
+    .flex-item {
+      padding: 10px;
+      margin: 10px;
+      background: white;
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    .flex-item:nth-child(1) {
+      font-size: 60px;
+    }
+
+    .flex-item:nth-child(2) {
+      font-size: 40px;
+    }
+
+    .flex-item:nth-child(3) {
+      font-size: 30px;
+    }
+
+    /* Preencha as classes abaixo com a propriedade align-items e o com o valor indicado */
+    .stretch {
+      align-items: stretch;
+    }
+
+    .baseline {
+      
+    }
+
+    .flex-start {
+      
+    }
+
+    .center {
+      
+    }
+
+    .flex-end {
+      
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="flex-container stretch">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+  </div>
+
+  <div class="flex-container baseline">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+  </div>
+
+  <div class="flex-container flex-start">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+  </div>
+
+  <div class="flex-container center">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+  </div>
+
+  <div class="flex-container flex-end">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+  </div>
+</body>
