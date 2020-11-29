@@ -521,10 +521,262 @@ Veja o exemplo:
 
 ### Controlando tamanhos e quebra de linha:
 
-flex-wrap
-flex-shrink
-flex-grow
-flex-basis
+Por fim, vamos aprender as propriedades CSS que controlam o tamanho dos itens flex e os manipulam diretamente por meio do flexbox. 
+
+Isso é importante porque, por mais que você possa utilizar o `width` para ajustar o comportamento dos flex-items, é sempre bom ter mais ferramentas no nosso arsenal! Além disso, as propriedades que você vai ver agora funcionam de uma maneira um pouco diferente e em muitos contextos usá-las pode ser a melhor opção.
+
+**flex-wrap:**
+
+O flexbox, por padrão, irá fazer com que todos os itens sejam dispostos sobre o eixo principal em uma única linha, ou seja, o conteúdo nunca será quebrado. Quando não sobra espaço para todos os itens, o flex-container simplesmente os diminui para que caibam naquele espaço.
+
+Isso é conveniente na maioria dos layouts, mas não em todos eles. Para nossa alegria, o flexbox possui uma propriedade chamada `flex-wrap`, que nos permite definir que o conteúdo, *ao invés de diminuir, será quebrado em múltiplas linhas*.
+
+Para usar essa propriedade, basta aplicá-la da seguinte forma:
+
+```css
+.flex-container {
+  flex-wrap: wrap;
+}
+```
+
+Uma vez feito isso, o ponto de quebra será definido com base no tamanho do flex-container e dos itens, sendo que ela ocorrerá de forma dinâmica caso o tamanho do container seja alterado.
+
+A propriedade flex-wrap tem como valor padrão o `nowrap`, que define que os itens não serão quebrados. 
+
+É possível também aplicar à propriedade o valor `wrap-reverse`, que inverte a ordem na qual os itens quebrados serão dispostos na tela (as linhas decorrentes da quebra serão colocadas acima da original no flex-container padrão, por exemplo).
+
+Para ver como o flex-wrap funciona, copie o seguinte código e cole no VS Code:
+
+```html
+<head>
+  <style>
+    .flex-container {
+      background-color: #e4e8ec;
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      margin: 0 0 20px;
+      /* aplique o flex-wrap abaixo */
+
+    }
+
+    .flex-item {
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 10px;
+      background: white;
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+      width: 25%;
+      text-align: center;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+    <div class="flex-item">E</div>
+    <div class="flex-item">F</div>
+    <div class="flex-item">G</div>
+    <div class="flex-item">H</div>
+    <div class="flex-item">I</div>
+    <div class="flex-item">J</div>
+  </div>
+</body>
+``` 
+
+Como você pode ver, a largura dos itens está definida como 25%, mas todos cabem na mesma linha. Agora aplique a propriedade `flex-wrap` no container e veja a mágica acontecer! Compare o que acontece quando você usa os valores `wrap` e `wrap-reverse`!
+
+> **NOTA.:** Mesmo a largura sendo 25%, apenas três itens ficaram dispostos em cada linha. Tente descobrir porquê manipulando outras propriedades dos *flex-items*!
+
+**Encolhendo e aumentando:**
+
+Pra terminar o conteúdo de hoje, vamos dar uma olhada nas propiedades que controlam o tamanho dos itens flex!
+
+Você já sabe que quando o tamanho do flex-container não é grande o suficiente para acomodar os flex-items, eles tem como comportamento padrão diminuir o próprio tamanho pra caber de forma ordenada dentro do seu container. Por outro lado, normalmente eles não crescem para além do seu tamanho máximo -- mas podemos mudar isso se quisermos!
+
+A tão comentada flexibilidade do flexbox está justamente na possibilidade de ajuste automático das caixas que ficam dentro do container: elas podem aumentar ou diminuir de forma automática para melhor se adaptar ao container. Para isso, temos a propriedade `flex`, que possui como valor padrão o seguinte:
+
+```css
+.flex-item {
+  flex:  0  1 auto;
+}
+```
+
+Cada um dos valores da propriedade `flex` representa um propriedade que pode ser aplicada individualmente, sendo `flex` uma [propriedade shorthand](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Shorthand_properties) das três propriedades seguintes:
+
+```css
+.flex-item {
+  flex-grow:  0;
+  flex-shrink:  1;
+  flex-basis: auto;
+}
+```
+
+Vamos agora explicar o que cada uma faz.
+
+Primeiro, temos as propriedades `flex-grow` e `flex-shrink`, que são conhecidas como ***fatores flex*** porque controlam o quanto os itens flex irão aumentar ou diminuir para se adaptar ao container.
+
+O **fator de crescimento (*flex-grow*)** é, por padrão, 0, ou seja, os itens flex não aumentam para preencher espaços vazios dentro do container.
+
+Quando se dá ao flex-grow um valor maior que zero, esse valor é traduzido como uma requisição de uma parte do espaço livre disponível, sendo que 1 significa “100% do espaço livre”. Nesse caso, se apenas tivermos um elemento e atribuirmos a ele um `flex-grow: 1;`; ele preencherá sempre todo o espaço livre do container.
+
+> **NOTA.:** Isso também significa que se você utilizar números decimais poderá ajustar de forma mais fina o quanto cada item crescerá, podendo inclusive ser que menos de 100% do espaço seja ocupado caso a soma dos flex-grow de cada item seja menor que 1!
+
+Mas e se tivermos a soma dos flex-grow for maior que 1, o que vai acontecer? Será que vai rolar um overflow do conteúdo? Ou o flexbox vai dar um jeito de recalcular? Vamos conferir:
+
+```html
+<head>
+  <style>
+    .flex-container {
+      background-color: #e4e8ec;
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      margin: 0  0  20px;
+      }
+
+    .flex-item {
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 10px;
+      background: white;
+      border: 1px  solid  rgba(0,0,0,.125);
+      border-radius: .25rem;
+      width: 25%;
+      text-align: center;
+    }
+
+    .a {
+      
+    }
+
+    .b {
+      
+    }
+
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="flex-item a">A</div>
+    <div class="flex-item b">B</div>
+  </div>
+</body>
+``` 
+Copie o código acima e siga os passo a seguir, sempre salvado a cada passo e observando no live server como os elementos se comportam:
+
+ 1. Dê ao item A um flex-grow com valor 1;
+ 2. Dê ao item B um flex-grow com valor 1;
+ 3. Dê ao item A um flex-grow com valor 2;
+ 4. Dê ao item B um flex-grow com valor 3;
+ 5. Dê ao item A um flex-grow com valor 0.3;
+ 6. Dê ao item B um flex-grow com valor 0.4;
+
+Viu só como os elementos flex se adaptam aos valores colocados?
+
+O que acontece é que sempre que a soma dos flex-grow de todos os itens for ***maior*** que um, *a requisição dos 100% do espaço passará a ser igual ao valor da soma*, sendo que ***cada item utilizará uma parte desses 100% do espaço de forma proporcional ao próprio valor***!
+
+De maneira oposta, como já vimos, caso a soma dos flex-grow seja ***menor*** que um, o valor que equivale a 100% do espaço permanece sendo 1, e nem todo o espaço será preenchido!
+
+<hr>
+
+O **fator de diminuição (*flex-shrink*)** , diferente do `flex-grow`, está ativo na configuração padrão, ou seja, os itens flex diminuem sempre que o espaço do container for menor que a soma das larguras dos flex-items.
+
+O `flex-shrink` considera duas variáveis na hora de realizar a diminuição dos itens:
+
+ - A quantidade de *espaço livre negativo*, ou seja, a diferença entre a soma dos tamanhos dos itens flex e  o tamanho do container.
+ 
+ - O tamanho base de cada item flex.
+
+Assim, se tivermos dois itens de tamanhos diferentes, eles serão reduzidos de maneira proporcional ao seu tamanho. Para ver como isso acontece, copie o código abaixo e cole no VS Code:
+
+```html
+<head>
+  <style>
+    .flex-container {
+      background-color: #e4e8ec;
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      margin: 0  0  20px;
+      width: 50vw;
+    }
+
+    .flex-item {
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 10px;
+      background: white;
+      border: 1px  solid  rgba(0,0,0,.125);
+      border-radius: .25rem;
+      width: 25%;
+      text-align: center;
+    }
+
+    .a {
+      flex-shrink: 0;
+      width: 50%;
+    }
+
+    .b {
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="flex-item a">A</div>
+    <div class="flex-item b">B</div>
+  </div>
+</body>
+``` 
+
+Agora siga os passos seguintes, mais uma vez salvando e observando a cada passo:
+
+ 1. Dê ao item A um flex-shrink com valor 1;
+ 2. Dê ao item A um flex-shrink com valor 0 e ao B um flex-shrink com valor 1;
+ 3. Dê ao item A um flex-shrink com valor 1;
+ 4. Dê ao item B um flex-shrink com valor 3;
+
+O importante nesse exercício é notar que, como as larguras dos dois itens são diferentes, se ambos tiverem o mesmo valor de `flex-shrink` (e esse valor for diferente de zero) eles sempre serão reduzidos na proporção da sua largura.
+
+Para alterar essa proporção, você pode alterar o fator de dimuinuição (`flex-shrink`) de um dos itens, ou pode alterar o tamanho dos itens. No entanto, a forma mais apropriada de fazer isso não é com a já conhecida `width`, mas usando a última propriedade que veremos hoje: `flex-basis`! 
+
+<hr>
+
+A propriedade ***flex-basis*** serve para especificar o tamanho inicial do flex-item em um flex-container, podendo substituir `width` ou `height` a depender da direção do *main axis*. Esse será o tamanho considerando antes de se aplicar os fatores de aumento e diminuição que vimos acima.
+
+Na prática, não existe muita diferença entre usar o `flex-basis` e usar o `width` ou `height`: o browser renderizará o conteúdo da mesmíssima forma. Só que existem alguns pontos que nos levam a considerar o uso do `flex-basis` no contexto de um container flex:
+
+-  `flex-basis`  apenas funciona quando aplicado a itens flex.
+
+-   `flex-basis`  funciona automaticamente de acordo com o main axis definido, ou seja, irá ajustar o width caso o eixo seja horizontal ou o height caso seja vertical.
+    
+-  E por último, se utilizarmos a propriedade shorthand `flex` que vimos no início dessa parte, esse valor pode ser definido de forma mais organizada que se for declarado em uma propriedade solta. Veja os exemplo a seguir, que fazem a mesma coisa:
+
+```css
+.flex-item {
+  flex-grow: 2;
+  flex-shrink: .5;
+  width: 100px;
+}
+```
+```css
+.flex-item {
+  flex: 2 .5 100px;
+}
+```
+
+Vale ressaltar que a [documentação oficial do flexbox](https://www.w3.org/TR/css-flexbox-1/#flex-components) recomenda que ao invés de usar as propriedades `flex-grow`, `flex-shrink` e `flex-basis` separadas os desenvolvedores utilizem o shorthand `flex`, pois isso evita erros no CSS!
+
+Agora que você já conheceu todo o potencial magnífico do flexbox, tá na hora de botar a mão na massa e praticar esse conhecimento!
 
 ## Exercícios
 
