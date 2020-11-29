@@ -78,7 +78,7 @@ Agora temos duas opções!
 
 Para começar a usufruir das maravilhas do *CSS Flexible Boxes*, basta aplicar na `section`, que é o elemento pai dos artigos no HTML, a seguinte propriedade CSS:
 
-```
+```CSS
 section {
   display: flex;
 }
@@ -121,36 +121,36 @@ Copie e cole o código html abaixo no seu VS Code:
       /* Utilize o espaço abaixo para transformar a div em um flex-container */
       
     }
-      
-      .flex-item {
-        padding: 10px;
-        margin: 10px;
-        background: white;
-        border: 1px  solid  rgba(0,0,0,.125);
-        border-radius: .25rem;
-        /* Experimente mudar a propriedade width para ver o que acontece com os itens! */
-        width: 10%;
-        text-align: center;
-      }
-      
-      .f1 {
-        font-size: 60px;
-      }
-      
-      .f2 {
-        font-size: 45px;
-      }
-      
-      .f1 {
-        font-size: 30px
-      }
+
+    .flex-item {
+      padding: 10px;
+      margin: 10px;
+      background: white;
+      border: 1px  solid  rgba(0,0,0,.125);
+      border-radius: .25rem;
+      /* Experimente mudar a propriedade width para ver o que acontece com os itens! */
+      width: 10%;
+      text-align: center;
+    }
+
+    .f1 {
+      font-size: 60px;
+    }
+
+    .f2 {
+      font-size: 45px;
+    }
+
+    .f1 {
+      font-size: 30px
+    }
   </style>
 </head>
 <body>
-  <div  class="flex-container">
-    <div  class="flex-item f1"></div>
-    <div  class="flex-item f2"></div>
-    <div  class="flex-item f3"></div>
+  <div class="flex-container">
+    <div class="flex-item f1"></div>
+    <div class="flex-item f2"></div>
+    <div class="flex-item f3"></div>
   </div>
 </body>
 ```
@@ -180,7 +180,7 @@ Antes de prosseguir, como já explicamos, o conjunto do *main axis* com a sua *d
 }
 ```
 
-A propriedade flex-direction tem quatro valores que servem para alterar o eixo principal e sua a direção: 
+A propriedade flex-direction tem quatro valores que servem para alterar o eixo principal e sua a direção. **Clique em cada um para saber mais**! 
 
 <details>
   <summary><code>flex-direction: row;</code></summary>
@@ -229,24 +229,24 @@ Agora que você já sabe como modificar a flex-direction para exibir o conteúdo
       /* Utilize o espaço abaixo para manipular a direção do conteúdo */
       
     }
-      
-      .flex-item {
-        padding: 10px;
-        margin: 10px;
-        background: white;
-        border: 1px  solid  rgba(0,0,0,.125);
-        border-radius: .25rem;
-        min-width: 10%;
-        text-align: center;
-        font-size: 60px;
-      }
+
+    .flex-item {
+      padding: 10px;
+      margin: 10px;
+      background: white;
+      border: 1px  solid  rgba(0,0,0,.125);
+      border-radius: .25rem;
+      min-width: 10%;
+      text-align: center;
+      font-size: 60px;
+    }
   </style>
 </head>
 <body>
-  <div  class="flex-container">
-    <div  class="flex-item"></div>
-    <div  class="flex-item"></div>
-    <div  class="flex-item"></div>
+  <div class="flex-container">
+    <div class="flex-item"></div>
+    <div class="flex-item"></div>
+    <div class="flex-item"></div>
   </div>
 </body>
 ```
@@ -295,79 +295,79 @@ Certamente as definições ainda estão um pouco confusas, mas agora vamos enten
       display: flex;
       margin: 0  0  20px;
     }
+
+    .flex-item {
+      padding: 10px;
+      margin: 10px;
+      background: white;
+      border: 1px  solid  rgba(0,0,0,.125);
+      border-radius: .25rem;
+      min-width: 10%;
+      text-align: center;
+      font-size: 60px;
+    }
+
+    .flex-start {
+      justify-content: flex-start;
+    }
+
+    .center {
       
-      .flex-item {
-        padding: 10px;
-        margin: 10px;
-        background: white;
-        border: 1px  solid  rgba(0,0,0,.125);
-        border-radius: .25rem;
-        min-width: 10%;
-        text-align: center;
-        font-size: 60px;
-      }
+    }
+
+    .flex-end {
       
-      .flex-start {
-        justify-content: flex-start;
-      }
+    }
+
+    .space-between {
       
-      .center {
-        
-      }
+    }
+
+    .space-around {
       
-      .flex-end {
-        
-      }
+    }
+
+    .space-evenly {
       
-      .space-between {
-        
-      }
-      
-      .space-around {
-        
-      }
-      
-      .space-evenly {
-        
-      }
-      
+    }
+
   </style>
 </head>
 <body>
-  <div  class="flex-container flex-start">
-    <div  class="flex-item"></div>
-    <div  class="flex-item"></div>
-    <div  class="flex-item"></div>
+  <div class="flex-container flex-start">
+    <div class="flex-item"></div>
+    <div class="flex-item"></div>
+    <div class="flex-item"></div>
   </div>
-  
-  <div  class="flex-container center">
-    <div  class="flex-item">1</div>
-    <div  class="flex-item">2</div>
-    <div  class="flex-item">3</div>
+
+  <div class="flex-container center">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
   </div>
-  
-  <div  class="flex-container flex-end">
-    <div  class="flex-item">1</div>
-    <div  class="flex-item">2</div>
-    <div  class="flex-item">3</div>
+
+  <div class="flex-container flex-end">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
   </div>
-  
-  <div  class="flex-container space-between">
-    <div  class="flex-item">1</div>
-    <div  class="flex-item">2</div>
-    <div  class="flex-item">3</div>
+
+  <div class="flex-container space-between">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
   </div>
-  
-  <div  class="flex-container space-around">
-    <div  class="flex-item">1</div>
-    <div  class="flex-item">2</div>
-    <div  class="flex-item">3</div>
+
+  <div class="flex-container space-around">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
   </div>
-  
-  <div  class="flex-container space-evenly">
-    <div  class="flex-item">1</div>
-    <div  class="flex-item">2</div>
-    <div  class="flex-item">3</div>
+
+  <div class="flex-container space-evenly">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
   </div>
   
 </body>
@@ -396,7 +396,97 @@ Por fim, podemos também aplicar ao align-items o atributo `baseline`, que alinh
 Agora vamos experimentar o alinhamento do conteúdo no cross axis usando align-items! Copie o código abaixo e cole no seu VS Code:
 
 ```html 
+<head>
+  <style>
+    .flex-container {
+      background-color: #e4e8ec;
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      margin: 0 0 20px;
+    }
 
+    .flex-item {
+      padding: 10px;
+      margin: 10px;
+      background: white;
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    .flex-item:nth-child(1) {
+      font-size: 60px;
+    }
+
+    .flex-item:nth-child(2) {
+      font-size: 40px;
+    }
+
+    .flex-item:nth-child(3) {
+      font-size: 30px;
+    }
+
+    /* Preencha as classes abaixo com a propriedade align-items e o com o valor indicado */
+    .stretch {
+      align-items: stretch;
+    }
+
+    .baseline {
+      
+    }
+
+    .flex-start {
+      
+    }
+
+    .center {
+      
+    }
+
+    .flex-end {
+      
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="flex-container stretch">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+  </div>
+
+  <div class="flex-container baseline">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+  </div>
+
+  <div class="flex-container flex-start">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+  </div>
+
+  <div class="flex-container center">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+  </div>
+
+  <div class="flex-container flex-end">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+    <div class="flex-item">D</div>
+  </div>
+</body>
 ```
 
 Agora utilize a propriedade que você acabou de aprender para alinhar os itens no *cross axis*, sem se esquecer de olhar a a diferença de alinhamento de cada um dos containers no *live server* do VS Code!
