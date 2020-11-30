@@ -1,0 +1,42 @@
+.flex-container {
+  background-color: rgba(0, 0, 0, .05);
+  box-sizing: border-box;
+  padding: 10px;
+  /* modifique o container dessa linha pra baixo */
+  height: 300px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  background: rgba(0, 0, 255, 0.333);
+  border-radius: .25rem;
+  border: 1px solid rgba(0,0,0,.225);
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 50px;
+}
+
+.line1 {
+ flex: 0 0 60%;
+}
+
+.line2 {
+  flex: 0 0 70%;
+ }
+
+ .line3 {
+  flex: 0 0 30%;
+ }
+
+ .line4 {
+  flex: 0 0 100%;
+ }
+
+ .line5{
+  flex: 0 0 50%;
+ }
