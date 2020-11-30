@@ -778,7 +778,131 @@ Vale ressaltar que a [documentação oficial do flexbox](https://www.w3.org/TR/c
 
 Agora que você já conheceu todo o potencial magnífico do flexbox, tá na hora de botar a mão na massa e praticar esse conhecimento!
 
+### Antes de começar: versionando o seu código
+Insira aqui o modelo de instruções de versionamento da Trybe
+
+### Agora a prática!
+
+Todos os exercícios terão como base os seguintes códigos:
+
+HTML:
+```html
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 1 - Flexbox</title>
+  <!-- Faça um link para o seu arquivo css abaixo -->
+  
+</head>
+<body>
+  <div class="flex-container">
+    <div class="flex-item"></div>
+    <div class="flex-item"></div>
+    <div class="flex-item"></div>
+    <div class="flex-item"></div>
+    <div class="flex-item"></div>
+  </div>
+</body>
+</html>
+
+```
+CSS:
+```css
+.flex-container {
+  background-color: rgba(0, 0, 0, .05);
+  box-sizing: border-box;
+  padding: 10px;
+  /* modifique o container dessa linha pra baixo */
+
+}
+
+.flex-item {
+  background: rgba(0, 0, 255, 0.333);
+  border-radius: .25rem;
+  border: 1px  solid  rgba(0,0,0,.225);
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 50px;
+  /* modifique os itens dessa linha pra baixo */
+
+}
+```
+Para cada exercício, você irá utilizar-se dos códigos acima, salvando-os na pasta desse bloco em seu repositório de exercícios.
+
+Agora você irá construir alguns layouts flexíveis usando tudo aquilo que aprendeu até o momento!
+
 ## Exercícios
+
+### Exercício 1:
+Copie os códigos base acima para o VS Code e salve-os em arquivos com os nomes `exercise-1.html` e `exercise-1.css`, respectivamente. Não esqueça de linkar o CSS e o HTML na área indicada e colocar um título apropriado!
+
+Agora elabore um layout em que todos os itens se alinhem ao centro da barra, mantendo as mesmas dimensões. Faça isso usando apenas as propriedades que você aprendeu hoje!
+
+Deverá ficar mais ou menos assim:
+
+![Layout - Exercício 1](https://i.ibb.co/mzb89Jr/exercise-1.png)
+
+### Exercício 2:
+Repita o processo do exercício 1 e crie os arquivos  `exercise-2.html` e `exercise-2.css`.
+
+
+Agora elabore um layout em que todos os itens se *alinhem lateralmente* e *preencham 100% do espaço do container* usando apenas as propriedades que você aprendeu hoje!
+
+Deverá ficar mais ou menos assim:
+
+![Layout - Exercício 2](https://i.ibb.co/Sm6f1F3/exercise-2.png)
+
+### Exercício 3:
+Repita o processo do exercício 1 e crie os arquivos  `exercise-3.html` e `exercise-3.css`.
+
+Agora elabore um layout em que apenas o item do meio se expanda para preencher o espaço vazio e os outros quatro permaneçam com o mesmo tamanho.
+
+> **DICA:** crie uma nova classe para alterar apenas o item do meio!
+
+Deverá ficar mais ou menos assim:
+![Layout - Exercício 3](https://i.ibb.co/yk1DqQz/exercise-3.png)
+
+### Exercício 4:
+Repita o processo do exercício 1 e crie os arquivos  `exercise-4.html` e `exercise-4.css`.
+
+Agora elabore um layout de grid alternado de três linhas de forma que:
+
+ 1. A primeira linha tenha dois itens ocupando metade do espaço livre;
+ 2. A segunda linha deverá ter um único item ocupando todo o espaço da linha;
+ 3. A terceira linha deverá ser igual à primeira
+
+Mais uma vez, fique à vontade para criar classes, mas você deve inserir nelas apenas as propriedades que aprendeu no dia de hoje! 
+
+Seu layout deve ficar mais ou menos assim:
+
+![Layout - Exercício 4](https://i.ibb.co/rsGpg16/exercise-4.png)
+
+### Exercício 5:
+Repita o processo do exercício 1 e crie os arquivos  `exercise-5.html` e `exercise-5.css`.
+
+Primeiramente, aplique ao container uma altura de 100vh. Isso fará com que ele ocupe todo o espaço em branco da tela.
+
+Agora elabore um layout em que todos os itens estejam centralizados exatamente no meio da página, tanto verticalmente quanto horizontalmente!
+
+Seu layout deverá ficar parecido com esse:
+
+![Layout - Exercício 5](https://i.ibb.co/FJg9FYv/exercise-5.png)
+
+### Exercício Bônus *(opcional)*:
+
+Você já é capaz de criar layouts com muito mais facilidade do que antes, mas agora, como bônus, vamos tentar algo mais difícil!
+
+Primeiro, defina a altura do container como 300px e a largura como 800px.
+
+Agora utilize o mesmo código base dos exercícios anteriores para criar um layout que se pareça com um gráfico de barras como esse:
+
+![Layout - Exercício Bônus](https://i.ibb.co/yQLNqnJ/exercise-bonus.png)
+
+Você pode utilizar a propriedade `height` nos flex-items para completar esse exercício, mas se quiser levar suas habilidades de flexbox ao limite tente replicar esse layout apenas com o que você aprendeu hoje!
+
+> **DICAS:** tente utilizar o flex-wrap para fazer com que as barras quebrem, e utilize valores que não permitam às barras se acumularem na mesma linha. Lembre-se: esse layout não é sobre criar um grafico de verdade, mas a *ilusão* de um gráfico!
 
 ## Recursos Adicionais
 
