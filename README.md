@@ -3,27 +3,22 @@
 
 ## O que vamos aprender?
 
-Olá, Tryber!
+Olá, XP Inker!
 
 No dia de hoje você irá aprender a utilizar uma das ferramentas mais poderosas para a criação de layouts em CSS: o **flexbox**!
 
 O [*CSS Flexible Box Layout Module Level 1*](https://www.w3.org/TR/css-flexbox-1/), ou ***flexbox*** para os íntimos, é um módulo que foi implementado na edição 3 do CSS e cuja finalidade é tornar mais fácil e eficiente o desenvolvimento de interfaces web fluidas e responsivas.
 
 
-### Você será capaz de:
-
-Ao final do conteúdo de hoje, você será capaz de aplicar o *flexbox* nos seus sites e desenvolver os mais diversos layouts a partir dessa ferramenta, o que eliminará boa parte das dificuldades que você enfrentou até o momento quanto ao alinhamento e à centralização do conteúdo!
-
-
 ## Porque isso é importante?
 
-Antes da implementação da versão 3 do CSS, as pessoas desenvolvedoras precisavam se virar nos 30 para deixar os seus sites com a aparência desejada usando aquilo que você já aprendeu: a propriedade  `display` com os valores `float`, `inline-block`, `block`, etc. e a propriedade `position` com os valores `fixed`, `absolute`, `relative`, etc. 
+Antes da implementação da versão 3 do CSS, as pessoas desenvolvedoras precisavam se virar nos 30 para deixar os seus sites com a aparência desejada usando propriedades que não foram exatamente pensadas para esse fim: a propriedade  `display` com os valores `float`, `inline-block`, `block`, etc. e a propriedade `position` com os valores `fixed`, `absolute`, `relative`, etc. 
 
-Mas como você já sabe, criar um layout bem feito apenas com essas propriedades CSS não é lá a coisa mais fácil do mundo. Existem tarefas que se tornam um pesadelo se apenas esses recursos estiverem disponíveis, como pro exemplo:
+Por não terem sido inicialmente concebidas para tanto, a criação de um layout bem feito apenas com essas propriedades CSS acaba não sendo a coisa mais fácil do mundo. Existem tarefas que se tornam um pesadelo se apenas esses recursos estiverem disponíveis, como pro exemplo:
 -   Alinhar *verticalmente* um bloco de conteúdo *no centro* do bloco que o contém;
 -   Fazer todos os elementos descendentes de um outro elemento ocuparem a mesma quantidade de espaço considerando a largura e altura disponíveis;
 -   Fazer todas as colunas de um conteúdo possuírem a mesma altura mesmo tendo conteúdos de tamanhos diferentes.
--  A criação de layouts responsivos, conceito que você aprenderá mais adiante.
+-   A criação de layouts responsivos.
 
 Com a chegada do CSS3, foi introduzido um módulo que acabou de vez com esse problema: o *CSS Flexible Boxes*, amplamente conhecido como **flexbox**. Com ele, tornou-se possível desenvolver layouts com muito mais facilidade e precisão: ele organiza os elementos de uma forma previsível, relativamente fácil de se controlar e que pode ser facilmente adaptada para diferentes browsers e tamanhos de tela.
 
@@ -65,12 +60,12 @@ Para conseguir entender de verdade como funciona o *flexbox*,  primeiro vamos re
 
 Ao rodar esse código no browser utilizando o layout padrão do HTML, a `section` ficará abaixo do `header`, todos os `article` ficarão abaixo um do outro e os `p` ficarão abaixo dos `h2`. Isso acontece por conta do display padrão desses elementos ser o `display: block;`.
 
-Para exemplificar, vejamos como fica a página com o layout padrão (após algumas estilizações no CSS pra deixar com a cara da Trybe :wink:):
+Para exemplificar, vejamos como fica uma página com esse layout padrão após algumas pequenas estilizações para que fique mais apresentável:
 
 ![Layout sem flexbox](https://i.ibb.co/fDqSwh4/no-flex-example.png)
 
 Mas e se quisermos colocar os artigos um do lado do outro, como podemos fazer?
-Agora temos duas opções!
+Temos duas opções:
 
 - Opção 1 - Penar por ~~horas~~ algum tempo com o `display: float;` e eventualmente conseguir montar um layout ~~mais ou menos~~ funcional na base de muita tentativa e erro;
 
@@ -83,7 +78,7 @@ section {
   display: flex;
 }
 ```
-Sim, é só isso que você precisa fazer --- pelo penos em um primeiro momento! Para começar a utilizar o *flexbox*, basta aplicar o valor `flex` à propriedade `display` do elemento que servirá como o que chamamos de ***flex container*** e que é o elemento anterior aos que você quer organizar.
+Sim, é só isso que você precisa fazer --- pelo menos em um primeiro momento! Para começar a utilizar o *flexbox*, basta aplicar o valor `flex` à propriedade `display` do elemento que servirá como o que chamamos de ***flex container*** e que é o elemento anterior aos que você quer organizar.
 
 Claro que isso não é tudo, mas já faz uma grande diferença! Vamos ver o nosso layout como ficou:
 
@@ -108,7 +103,7 @@ Como se pode ver, os eixos flex são os seguintes:
 
 Também podemos ver a partir dessa imagem que ambos os eixos possuem uma direção padrão: da esquerda para a direita no main axis e de cima pra baixo no cross axis. À junção do eixo principal com a direção padrão damos o nome de ***flex direction***. Não esqueça desse termo, pois será muito importante nas próximas etapas!
 
- Vamos praticar um pouco?
+Vamos praticar um pouco?
 Copie e cole o código html abaixo no seu VS Code:
 
 ```html
@@ -185,7 +180,7 @@ A propriedade flex-direction tem quatro valores que servem para alterar o eixo p
 <details>
   <summary><code>flex-direction: row;</code></summary>
   <p>Alinha o flex-container na horizontal, da esquerda para a direita:</p>
-  <img src="https://i.ibb.co/rMhTn67/flex-axes.png" alt="representeção do flex-direction row">
+  <img src="https://i.ibb.co/rMhTn67/flex-axes.png" alt="representação do flex-direction row">
   <p>O <code>flex-direction: row;</code> é o atributo padrão dos flex-containers.</p>
   <br>
 </details>
@@ -193,7 +188,7 @@ A propriedade flex-direction tem quatro valores que servem para alterar o eixo p
 <details>
   <summary><code>flex-direction: row-reverse;</code></summary>
   <p>Alinha o flex-container na horizontal, da direita para a esquerda:</p>
-  <img src="https://i.ibb.co/WxFvjL3/flex-row-reverse.png" alt="representeção do flex-direction row-reverse">
+  <img src="https://i.ibb.co/WxFvjL3/flex-row-reverse.png" alt="representação do flex-direction row-reverse">
   <p>Neste caso, apenas invertemos a direção do eixo principal, que permanece na horizontal.</p>
   <br>
 </details>
@@ -201,7 +196,7 @@ A propriedade flex-direction tem quatro valores que servem para alterar o eixo p
 <details>
   <summary><code>flex-direction: column;</code></summary>
   <p>Alinha o flex-container na vertical, de cima para baixo:</p>
-  <img src="https://i.ibb.co/92jv8wg/flex-column.png" alt="representeção do flex-direction column">
+  <img src="https://i.ibb.co/92jv8wg/flex-column.png" alt="representação do flex-direction column">
   <p>Ao usar o valor <code>column</code> nós trocamos o <em>main axis</em> e o <em>cross axis</em> de lugar. Isso possibilita posicionarmos elementos de forma parecida com o <code>display: block;</code>, mas mantendo toda a flexibilidade do <em>flexbox</em>!</p>
   <br>
 </details>
@@ -209,7 +204,7 @@ A propriedade flex-direction tem quatro valores que servem para alterar o eixo p
 <details>
   <summary><code>flex-direction: column-reverse;</code></summary>
   <p>Alinha o flex-container na vertical, de baixo para cima:</p>
-  <img src="https://i.ibb.co/ZXNZr1d/flex-column-reverse.png" alt="representeção do flex-direction column-reverse">
+  <img src="https://i.ibb.co/ZXNZr1d/flex-column-reverse.png" alt="representação do flex-direction column-reverse">
   <p>Ao usar o valor <code>column</code> nós trocamos o <em>main axis</em> e o <em>cross axis</em> de lugar. Isso possibilita posicionarmos elementos de forma parecida com o <code>display: block;</code>, mas mantendo toda a flexibilidade do <em>flexbox</em>!</p>
   <br>
 </details>
@@ -374,9 +369,9 @@ Certamente as definições ainda estão um pouco confusas, mas agora vamos enten
 ```
 Agora preencha todas as classes com a propriedade justify-content e o valor correto. A cada propriedade que você aplicar, salve o código e veja a diferença no Live Server!
 
-Agora mais um desafio: mude a `flex-direction` da classe `.flex-container` para que o eixo principal tenha como diração de cima para baixo. Em seguida, aplique a esta mesma classe uma altura de 500px. Agora compare o alinhamento do *flex-items* de cada container para que você veja como eles se comportam quando o *main axis* é alterado.
+Agora mais um desafio: mude a `flex-direction` da classe `.flex-container` para que o eixo principal tenha como direção de cima para baixo. Em seguida, aplique a esta mesma classe uma altura de 500px. Agora compare o alinhamento do *flex-items* de cada container para que você veja como eles se comportam quando o *main axis* é alterado.
 
-Viu só como o flexbox é extremamente poderoso? Só com o que você já sabe, é possível fazer os layouts dos projetos e exercícios anteriores com muito mais facilidade! Mas ainda faltam algumas outras ferramentas de controle mais fino do alinhamento e tamanho dos itens para fecharmos o conteúdo!
+Viu só como o flexbox é extremamente poderoso? Só com o que você já sabe, é possível fazer os layouts bem construídos e flexíveis com muito mais facilidade! Mas ainda faltam algumas outras ferramentas de controle mais fino do alinhamento e tamanho dos itens para fecharmos o conteúdo!
 
 
 ### Alinhamento, alinhamento e mais alinhamento!
@@ -595,7 +590,7 @@ Como você pode ver, a largura dos itens está definida como 25%, mas todos cabe
 
 **Encolhendo e aumentando:**
 
-Pra terminar o conteúdo de hoje, vamos dar uma olhada nas propiedades que controlam o tamanho dos itens flex!
+Pra terminar o conteúdo de hoje, vamos dar uma olhada nas propriedades que controlam o tamanho dos itens flex!
 
 Você já sabe que quando o tamanho do flex-container não é grande o suficiente para acomodar os flex-items, eles tem como comportamento padrão diminuir o próprio tamanho pra caber de forma ordenada dentro do seu container. Por outro lado, normalmente eles não crescem para além do seu tamanho máximo -- mas podemos mudar isso se quisermos!
 
@@ -747,7 +742,7 @@ Agora siga os passos seguintes, mais uma vez salvando e observando a cada passo:
 
 O importante nesse exercício é notar que, como as larguras dos dois itens são diferentes, se ambos tiverem o mesmo valor de `flex-shrink` (e esse valor for diferente de zero) eles sempre serão reduzidos na proporção da sua largura.
 
-Para alterar essa proporção, você pode alterar o fator de dimuinuição (`flex-shrink`) de um dos itens, ou pode alterar o tamanho dos itens. No entanto, a forma mais apropriada de fazer isso não é com a já conhecida `width`, mas usando a última propriedade que veremos hoje: `flex-basis`! 
+Para alterar essa proporção, você pode alterar o fator de diminuição (`flex-shrink`) de um dos itens, ou pode alterar o tamanho dos itens. No entanto, a forma mais apropriada de fazer isso não é com a já conhecida `width`, mas usando a última propriedade que veremos hoje: `flex-basis`! 
 
 <hr>
 
@@ -777,9 +772,6 @@ Na prática, não existe muita diferença entre usar o `flex-basis` e usar o `wi
 Vale ressaltar que a [documentação oficial do flexbox](https://www.w3.org/TR/css-flexbox-1/#flex-components) recomenda que ao invés de usar as propriedades `flex-grow`, `flex-shrink` e `flex-basis` separadas os desenvolvedores utilizem o shorthand `flex`, pois isso evita erros no CSS!
 
 Agora que você já conheceu todo o potencial magnífico do flexbox, tá na hora de botar a mão na massa e praticar esse conhecimento!
-
-### Antes de começar: versionando o seu código
-Insira aqui o modelo de instruções de versionamento da Trybe
 
 ### Agora a prática!
 
@@ -829,7 +821,7 @@ CSS:
 
 }
 ```
-Para cada exercício, você irá utilizar-se dos códigos acima, salvando-os na pasta desse bloco em seu repositório de exercícios.
+Para cada exercício, você irá utilizar-se dos códigos acima, salvando-os na pasta desse bloco em seu repositório de exercícios (crie um se não tiver).
 
 Agora você irá construir alguns layouts flexíveis usando tudo aquilo que aprendeu até o momento!
 
@@ -838,7 +830,7 @@ Agora você irá construir alguns layouts flexíveis usando tudo aquilo que apre
 ### Exercício 1:
 Copie os códigos base acima para o VS Code e salve-os em arquivos com os nomes `exercise-1.html` e `exercise-1.css`, respectivamente. Não esqueça de linkar o CSS e o HTML na área indicada e colocar um título apropriado!
 
-Agora elabore um layout em que todos os itens se alinhem ao centro da barra, mantendo as mesmas dimensões. Faça isso usando apenas as propriedades que você aprendeu hoje!
+Agora elabore um layout em que todos os itens se alinhem ao centro da barra, mantendo as mesmas dimensões. Faça isso usando apenas as propriedades que você aprendeu nesse conteúdo!
 
 Deverá ficar mais ou menos assim:
 
@@ -848,7 +840,7 @@ Deverá ficar mais ou menos assim:
 Repita o processo do exercício 1 e crie os arquivos  `exercise-2.html` e `exercise-2.css`.
 
 
-Agora elabore um layout em que todos os itens se *alinhem lateralmente* e *preencham 100% do espaço do container* usando apenas as propriedades que você aprendeu hoje!
+Agora elabore um layout em que todos os itens se *alinhem lateralmente* e *preencham 100% do espaço do container* usando apenas as propriedades que você aprendeu nesse conteúdo!
 
 Deverá ficar mais ou menos assim:
 
@@ -873,7 +865,7 @@ Agora elabore um layout de grid alternado de três linhas de forma que:
  2. A segunda linha deverá ter um único item ocupando todo o espaço da linha;
  3. A terceira linha deverá ser igual à primeira
 
-Mais uma vez, fique à vontade para criar classes, mas você deve inserir nelas apenas as propriedades que aprendeu no dia de hoje! 
+Mais uma vez, fique à vontade para criar classes, mas você deve inserir nelas apenas as propriedades que aprendeu nesse conteúdo! 
 
 Seu layout deve ficar mais ou menos assim:
 
@@ -900,9 +892,9 @@ Agora utilize o mesmo código base dos exercícios anteriores para criar um layo
 
 ![Layout - Exercício Bônus](https://i.ibb.co/yQLNqnJ/exercise-bonus.png)
 
-Você pode utilizar a propriedade `height` nos flex-items para completar esse exercício, mas se quiser levar suas habilidades de flexbox ao limite tente replicar esse layout apenas com o que você aprendeu hoje!
+Você pode utilizar a propriedade `height` nos flex-items para completar esse exercício, mas se quiser levar suas habilidades de flexbox ao limite tente replicar esse layout apenas com o que você aprendeu nesse conteúdo!
 
-> **DICAS:** tente utilizar o flex-wrap para fazer com que as barras quebrem, e utilize valores que não permitam às barras se acumularem na mesma linha. Lembre-se: esse layout não é sobre criar um grafico de verdade, mas a *ilusão* de um gráfico!
+> **DICAS:** tente utilizar o flex-wrap para fazer com que as barras quebrem, e utilize valores que não permitam às barras se acumularem na mesma linha. Lembre-se: esse layout não é sobre criar um gráfico de verdade, mas a *ilusão* de um gráfico!
 
 ## Recursos Adicionais
 
