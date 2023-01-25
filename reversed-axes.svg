@@ -14,7 +14,7 @@
    width="744.91388"
    height="704.85815"
    viewBox="0 0 744.91387 704.85818"
-   sodipodi:docname="eixos-revertidos.svg"
+   sodipodi:docname="reversed-axes.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    inkscape:export-filename="/home/silvio/Documents/trybe/personal-projects/summer-fase-2/flex-column-reverse.png"
    inkscape:export-xdpi="96"
@@ -205,18 +205,6 @@
          x="74.222847"
          id="tspan1018"
          sodipodi:role="line">main axis</tspan></text>
-    <text
-       transform="rotate(90)"
-       id="text1020-1"
-       y="-344.70166"
-       x="73.655769"
-       style="font-style:normal;font-weight:normal;font-size:13.25452709px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.66272628"
-       xml:space="preserve"><tspan
-         style="stroke-width:0.66272628"
-         y="-344.70166"
-         x="73.655769"
-         id="tspan1018-27"
-         sodipodi:role="line">(eixo principal)</tspan></text>
   </g>
   <g
      id="g947"
@@ -231,16 +219,5 @@
          x="580.87384"
          id="tspan1018-2"
          sodipodi:role="line">cross axis</tspan></text>
-    <text
-       id="text1020-1-0"
-       y="469.80292"
-       x="579.17096"
-       style="font-style:normal;font-weight:normal;font-size:14.50252819px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.72512639"
-       xml:space="preserve"><tspan
-         style="stroke-width:0.72512639"
-         y="469.80292"
-         x="579.17096"
-         id="tspan1018-27-9"
-         sodipodi:role="line">(eixo cruzado)</tspan></text>
   </g>
 </svg>
